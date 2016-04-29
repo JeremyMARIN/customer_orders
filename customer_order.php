@@ -20,15 +20,16 @@ include("include/check_session.php");
 		</header>
 
 		<div id="content">
-			<form action="inventory.php" method="post">
+			<form action="customer_order_verification.php" method="post">
 				<div id="list" class="panel round">
 				
 				</div>
-				<div class="action-container">
+				<div class="action-container one">
 					<button type="submit" class="round green grow">Submit</button>
-					<button type="reset" class="round orange grow">Reset</button>
 				</div>
 			</form>
 		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/customer_order.js"></script>
 	</body>
 </html>

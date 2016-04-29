@@ -10,7 +10,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["nyu
 	if ( checkInfo($_POST["firstname"], $_POST["lastname"], $_POST["nyu-id"]) ) {
 		$_SESSION["firstname"] = $_POST["firstname"];
 		$_SESSION["lastname"]  = $_POST["lastname"];
-		$_SESSION["email"]     = $_POST["email"] . "@nyu.edu";
+		$_SESSION["email"]     = $_POST["nyu-id"] . "@nyu.edu";
 		header("Location: customer_order.php"); // redirect the user to front page
 	}
 }
@@ -31,11 +31,11 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["nyu
 			</div>
 		</header>
 
-		<div id="content">
+		<div id="content" class="info">
 			<div class="panel round">
 				<form method="post">
 					<div id="input-container">
-						<table>
+						<table class="info">
 							<tr>
 								<td>
 									<label for="firstname">Firstname: </label>
@@ -65,7 +65,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["nyu
 							</tr>
 						</table>
 					</div>
-					<div class="action-container">
+					<div class="action-container two">
 						<button type="submit" class="round green grow">Continue to Order Page</button>
 						<button type="reset" class="round orange grow">Reset</button>
 					</div>

@@ -1,8 +1,11 @@
-h2 {
+h2, h5 {
 	margin: 0;
 }
 h3 {
 	margin-bottom: 0;
+}
+h5 {
+	padding: 8px 8px;
 }
 
 body {
@@ -14,10 +17,8 @@ body {
 button {
 	color: white;
 	display: inline-block;
-	font-size: 1.2em;
 	text-align: center;
 	border: none;
-	padding: 16px 16px;
 }
 
 form {
@@ -39,13 +40,45 @@ table {
 	width: 100%;
 	margin: auto;
 }
-td {
+
+.info td {
 	padding-bottom: 8px;
 }
-td:first-child {
+.info td:first-child {
 	text-align: right;
 	width: 30%;
 	padding-right: 20px;
+}
+
+.verification {
+	width: 60%;
+	border-collapse: collapse;
+}
+.verification tr {
+	transition: all 0.2s ease-in-out;
+}
+.verification tr:nth-child(even) {
+	background-color: rgba(90, 90, 90, 0.8);
+}
+.verification tr:nth-child(even):hover {
+	background-color: rgba(100, 100, 100, 0.8);
+}
+.verification tr:nth-child(odd) {
+	background-color: rgba(50, 50, 50, 0.8);
+}
+.verification tr:nth-child(odd):hover {
+	background-color: rgba(60, 60, 60, 0.8);
+}
+.verification td, .verification th {
+	text-align: center;
+	border: 2px solid black;
+	height: 48px;
+}
+.verification td:nth-child(1) {
+	width: 40%;
+}
+.verification td:nth-child(3) {
+	width: 15%;
 }
 
 a:link {
@@ -67,24 +100,6 @@ a:visited {
 	background-color: rgba(60, 60, 60, 0.8);
 	margin: 8px;
 	padding: 16px;
-}
-.button {
-	border-radius: 20px;
-	background-color: rgba(120, 120, 120, 0.8);
-}
-.button a {
-	display: inline-block;
-	color: white;
-	text-decoration: none;
-	font-size: 0.8em;
-}
-.button img {
-	width: 12%;
-	margin-right: 4%;
-	vertical-align: middle;
-}
-.button:hover {
-	background-color: rgba(130, 130, 130, 0.8);
 }
 
 .grow {
@@ -140,6 +155,11 @@ a:visited {
 	width: 100%;
 	height: 100%;
 }
+.picture-container {
+	min-height: 156px;
+	height: 100%;
+	margin: 4px 8px;
+}
 .sold-out {
 	background-image: url("../img/sold_out.png");
 	position: absolute;
@@ -161,6 +181,11 @@ a:visited {
 	height: 60%;
 	max-height: 40px;
 }
+.price {
+	display: inline-block;
+	width: 40%;
+	font-size: 0.9em;
+}
 
 .action-container {
 	width: 80%;
@@ -171,8 +196,21 @@ a:visited {
 .action-container button {
 	width: 40%;
 	display: table-cell;
+	font-size: 1.2em;
+	padding: 16px 16px;
+}
+.action-container.two button {
 	margin-right: 5%;
 	margin-left: 5%;
+}
+.action-container.one button {
+	margin-right: 30%;
+	margin-left: 30%;
+}
+
+.information button {
+	width: 45%;
+	padding: 8px 8px;
 }
 
 .green {
@@ -187,6 +225,12 @@ a:visited {
 .orange:hover {
 	background-color: rgba(255, 163, 10, 0.9);
 }
+.red {
+	background-color: rgba(150, 40, 40, 0.9);
+}
+.red:hover {
+	background-color: rgba(160, 50, 50, 0.9);
+}
 
 
 #header, #content {
@@ -197,6 +241,8 @@ a:visited {
 
 #content {
 	height: 60%;
+}
+#content.info, #content.final {
 	position: relative;
 	top: 45%;
 	transform: translateY(-50%);
