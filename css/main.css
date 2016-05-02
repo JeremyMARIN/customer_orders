@@ -161,7 +161,7 @@ a:visited {
 	margin: 4px 8px;
 }
 .sold-out {
-	background-image: url("../img/sold_out.png");
+	background-image: url("../include/sold_out.php");
 	position: absolute;
 	z-index: 10;
 	width: 100%;
