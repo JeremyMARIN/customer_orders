@@ -20,7 +20,7 @@ include("include/check_session.php");
 		</header>
 
 		<div id="content">
-			<form action="customer_order_verification.php" method="post">
+			<form name="order" action="customer_order_verification.php" method="post" onsubmit="return checkForm();">
 				<div id="list" class="panel round">
 				
 				</div>

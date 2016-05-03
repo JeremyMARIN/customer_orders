@@ -87,3 +87,16 @@ function addOrderButtons() {
 		}
 	}
 }
+
+function checkForm() {
+	var form = document.forms["order"];
+
+	for (var i = 0, max = form.length; i < max; i++) {
+		if ( (form[i].type != "button") && (form[i].value != 0) ) {
+			return true;
+		}
+	}
+
+	alert("You should select at least one item.");
+	return false;
+}
