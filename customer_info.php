@@ -23,7 +23,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["nyu
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
-	<body onload="init();">
+	<body>
 		<header id="header">
 			<div class="panel round">
 				<h2 class="text-centered">Best Video Games Online Shop</h2>
@@ -33,7 +33,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["nyu
 
 		<div id="content" class="info">
 			<div class="panel round">
-				<form method="post">
+				<form name="info" method="post" onsubmit="return checkForm();">
 					<div id="input-container">
 						<table class="info">
 							<tr>
@@ -72,5 +72,6 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["nyu
 				</form>
 			</div>
 		</div>
+		<script type="text/javascript" src="js/customer_info.js"></script>
 	</body>
 </html>

@@ -16,6 +16,8 @@ function rotatetransparentimg($imageSource, $angle) {
 	return $result;
 }
 
+
+
 // Create a 1200*600 image
 $im = imagecreatetruecolor(1200, 600);
 
@@ -44,12 +46,12 @@ imagettftext($im, 190, 0, 100, 355, $darkRed, $font, $text);
 // Add the text
 imagettftext($im, 190, 0, 100, 350, $red, $font, $text);
 
-
+// Add the transparency
 imagecolortransparent($im, $white);
 
-
-
+// Rotate the image
 $im = rotatetransparentimg($im, 20);
+
 
 
 // Output and free memory
