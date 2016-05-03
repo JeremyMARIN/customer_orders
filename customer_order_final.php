@@ -30,6 +30,11 @@ if ($_POST <= 0) {
 					Thank you, <?php echo $_SESSION["firstname"]; ?>!<br /><br />
 					Your order is on the way and a verification email has been sent to <?php echo $_SESSION["email"]; ?>.
 				</h4>
+				<form action="customer_info.php" method="post">
+					<div class="action-container one">
+						<button type="submit" class="round green grow">New Order</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</body>

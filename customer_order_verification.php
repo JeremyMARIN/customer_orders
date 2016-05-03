@@ -1,5 +1,6 @@
 <?php
 include("include/check_session.php");
+include("include/helpers.php");
 
 function getOrders($form) {
 	$orders = array();
@@ -95,8 +96,15 @@ function sendEmail($list) {
 $list = array();
 
 if (count($_POST) > 0) {
-	$list = getList(getOrders($_POST));
-	sendEmail($list);
+	$orders = getOrders($_POST);
+	$list = getList($orders);
+
+	if (isset($_POST["confirm"])) {
+		if (updateInventoryAfterOrder($orders)) {
+			sendEmail($list);
+			header("Location: customer_order_final.php"); // redirect the user to the final page
+		}
+	}
 } else {
 	echo "Bad request...";
 	exit(0);
@@ -130,12 +138,23 @@ if (count($_POST) > 0) {
 				</h4>
 				<div>
 					<table class="verification">
-						<?php echo buildTableContent($list) ?>
+						<?php
+							if (!empty($list))
+								echo buildTableContent($list);
+							else
+								echo "An error occured...";
+						?>
 					</table>
 				
 				</div>
-				<form action="customer_order_final.php" method="post">
+				<form method="post">
+					<input type="hidden" name="confirm" />
 					<div class="action-container one">
+						<?php
+							foreach ($orders as $value) {
+								echo "<input type=\"hidden\" name=\"$value\" value=\"1\" />";
+							}
+						?>
 						<button type="submit" class="round green grow">Confirm</button>
 					</div>
 				</form>
