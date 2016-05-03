@@ -3,9 +3,6 @@
 function rotatetransparentimg($imageSource, $angle) {
 	$transp = imagecolorallocatealpha($imageSource, 0, 0, 0, 127);
 
-	imagealphablending($result, false);
-	imagesavealpha($result, true);
-
 	imagefill($imageSource, 0, 0, $transp);
 
 	$result = imagerotate($imageSource, $angle, $transp);

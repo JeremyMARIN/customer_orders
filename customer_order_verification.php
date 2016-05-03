@@ -81,9 +81,9 @@ function sendEmail($list) {
 	$subject = "[Best Video Games Online Shop] Hey " . $_SESSION["firstname"] . "!";
 	
 	$content = "<body style=\"background-image: url('http://i6.cims.nyu.edu/~jgm438/inventory/img/background.jpg'); background-size: cover;\">";
-	$content .= "<div style=\"margin: auto; width: 80%; max-width: 400px; background-color: #eee; border-radius: 20px; padding: 0 16px;\">";
+	$content .= "<div style=\"margin: auto; width: 80%; max-width: 400px; background-color: #eee; border-radius: 20px; padding: 0 16px; margin-top: 50px;\">";
 	$content .= "<h1>Your Command:</h1>";
-	$content .= "<table style=\"width: 100%; margin: auto; text-align: center;\">" . buildTableContent($list) . "</table>";
+	$content .= "<table border=\"1\" style=\"width: 100%; margin: auto; text-align: center;  border-collapse: collapse;\">" . buildTableContent($list) . "</table>";
 	$content .= "<p style=\"text-align: right\">See you soon!</p>";
 	$content .= "</div></body>";
 
